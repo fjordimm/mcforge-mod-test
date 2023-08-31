@@ -1,0 +1,17 @@
+{
+  "variants":
+  {
+    "type=bottom":
+    {
+      "model": "bayunga:block/paper_slab_bottom"
+    },
+    "type=double":
+    {
+      "model": "bayunga:block/paper_slab_double"
+    },
+    "type=top":
+    {
+      "model": "bayunga:block/paper_slab_top"
+    }
+  }
+}

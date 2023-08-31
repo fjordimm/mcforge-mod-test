@@ -2,8 +2,10 @@ package io.github.fjordimm.bayunga;
 
 import com.mojang.logging.LogUtils;
 import io.github.fjordimm.bayunga.block.ManBlock;
+import io.github.fjordimm.bayunga.block.PaperSlabBlock;
 import io.github.fjordimm.bayunga.item.IphoneItem;
 import io.github.fjordimm.bayunga.item.ManBlockItem;
+import io.github.fjordimm.bayunga.item.PaperSlabBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,6 +36,7 @@ public final class BayungaMod
         public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 
         public static final RegistryObject<Block> MAN_BLOCK = BLOCKS.register(ManBlock.REGISTRY_NAME, () -> new ManBlock());
+        public static final RegistryObject<Block> PAPER_SLAB_BLOCK = BLOCKS.register(PaperSlabBlock.REGISTRY_NAME, () -> new PaperSlabBlock());
     }
 
     public static class AllItems
@@ -42,5 +45,6 @@ public final class BayungaMod
 
         public static final RegistryObject<Item> IPHONE_ITEM = ITEMS.register(IphoneItem.REGISTRY_NAME, () -> new IphoneItem());
         public static final RegistryObject<Item> MAN_BLOCK_ITEM = ITEMS.register(ManBlockItem.REGISTRY_NAME, () -> new ManBlockItem(AllBlocks.MAN_BLOCK.get()));
+        public static final RegistryObject<Item> PAPER_SLAB_BLOCK_ITEM = ITEMS.register(PaperSlabBlockItem.REGISTRY_NAME, () -> new PaperSlabBlockItem(AllBlocks.PAPER_SLAB_BLOCK.get()));
     }
 }
