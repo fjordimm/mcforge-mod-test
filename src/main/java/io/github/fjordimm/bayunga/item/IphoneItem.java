@@ -6,7 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 public class IphoneItem extends Item
 {
-    private static final String REGISTRY_NAME = "iphone";
+    public static final String REGISTRY_NAME = "iphone";
 
     public IphoneItem()
     {
@@ -21,10 +21,5 @@ public class IphoneItem extends Item
         ret.tab(CreativeModeTab.TAB_TOOLS);
 
         return ret;
-    }
-
-    public static void register(final DeferredRegister<Item> itemsRegister)
-    {
-        itemsRegister.register(REGISTRY_NAME, () -> new IphoneItem());
     }
 }

@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import io.github.fjordimm.bayunga.item.IphoneItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,32 +19,23 @@ public final class BayungaMod
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    private static final DeferredRegister<Item> SCHIT = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-    public static final RegistryObject<Item> SCHOT = SCHIT.register("iphone", () -> new IphoneItem());
-
     public BayungaMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        final DeferredRegister<Block> blocksReg = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-        final DeferredRegister<Item> itemsReg = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-
-        registerAllBlocks(blocksReg);
-        registerAllItems(itemsReg);
-
-        blocksReg.register(modEventBus);
-        itemsReg.register(modEventBus);
-
-        SCHIT.register(modEventBus);
-
-        MinecraftForge.EVENT_BUS.register(this);
+        Blocks.BLOCKS.register(modEventBus);
+        Items.ITEMS.register(modEventBus);
     }
 
-    private static void registerAllBlocks(final DeferredRegister<Block> reg)
-    {}
-
-    private static void registerAllItems(final DeferredRegister<Item> reg)
+    public static class Blocks
     {
-        // IphoneItem.register(reg);
+        public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
+    }
+
+    public static class Items
+    {
+        public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
+        public static final RegistryObject<Item> IPHONE_ITEM = ITEMS.register(IphoneItem.REGISTRY_NAME, () -> new IphoneItem());
     }
 }

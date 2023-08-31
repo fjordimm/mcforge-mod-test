@@ -181,3 +181,8 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+// Thing i guess?
+sourceSets.all {
+    it.output.resourcesDir = it.output.classesDirs.getFiles().iterator().next()
+}
