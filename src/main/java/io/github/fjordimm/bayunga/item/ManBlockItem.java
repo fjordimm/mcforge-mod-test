@@ -1,23 +1,24 @@
 package io.github.fjordimm.bayunga.item;
 
+import io.github.fjordimm.bayunga.BayungaMod;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
+import net.minecraft.world.level.block.Block;
 
-public class IphoneItem extends Item
+public class ManBlockItem extends BlockItem
 {
-    public static final String REGISTRY_NAME = "iphone";
+    public static final String REGISTRY_NAME = "man_block";
 
-    public IphoneItem()
+    public ManBlockItem(final Block block)
     {
-        super(makeItemProperties());
+        super(block, makeItemProperties());
     }
 
     private static Item.Properties makeItemProperties()
     {
         Item.Properties ret = new Item.Properties();
 
-        ret.stacksTo(3);
         ret.tab(CreativeModeTab.TAB_TOOLS);
 
         return ret;

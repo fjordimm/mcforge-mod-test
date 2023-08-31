@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures":
+  {
+    "top": "bayunga:block/paper_slab_top",
+    "side": "bayunga:block/paper_slab_side",
+    "bottom": "bayunga:block/paper_slab_top"
+  }
+}

@@ -1,0 +1,7 @@
+
+To find vanilla assets and stuff for reference, go to External Libraries and look in one of these:
+ - Gradle: net.minecraftforge:forge:1.19.2-43.2.20_mapped_official_1.19.2
+    especially...
+    - /net/minecraft/world/level/block/Blocks
+    - /net/minecraft/world/item/Items
+ - Gradle: net.minecraft:client:extra:1.19.2

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures":
+  {
+    "end": "bayunga:block/paper_slab_top",
+    "side": "bayunga:block/paper_slab_side"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "variants":
+  {
+    "":
+    {
+      "model": "bayunga:block/man_block"
+    }
+  }
+}
