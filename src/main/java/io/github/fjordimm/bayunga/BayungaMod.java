@@ -24,7 +24,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 @Mod(BayungaMod.MODID)
-public class BayungaMod {
+public final class BayungaMod {
     public static final String MODID = "bayunga";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
@@ -46,25 +46,6 @@ public class BayungaMod {
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO from common setup");
-        LOGGER.info("Dirt block >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        LOGGER.info("HELLO from server starting");
-    }
-
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            LOGGER.info("HELLO from client setup");
-            LOGGER.info("Minecraft name >> {}", Minecraft.getInstance().getUser().getName());
-        }
+        LOGGER.info("Hello from BayungaMod.commonSetup().");
     }
 }
