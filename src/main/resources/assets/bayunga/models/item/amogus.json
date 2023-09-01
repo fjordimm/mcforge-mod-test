@@ -1,3 +1,7 @@
 {
-  "parent": "bayunga:block/amogus"
+  "parent": "item/generated",
+  "textures":
+  {
+    "layer0": "bayunga:item/amogus_item"
+  }
 }

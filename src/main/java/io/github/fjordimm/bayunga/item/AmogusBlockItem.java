@@ -2,6 +2,7 @@ package io.github.fjordimm.bayunga.item;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class AmogusBlockItem extends BlockItem
@@ -13,12 +14,9 @@ public class AmogusBlockItem extends BlockItem
         super(block, makeItemProperties());
     }
 
-    private static Properties makeItemProperties()
+    private static Item.Properties makeItemProperties()
     {
-        Properties ret = new Properties();
-
-        ret.tab(CreativeModeTab.TAB_TOOLS);
-
-        return ret;
+        return new Item.Properties()
+                .tab(CreativeModeTab.TAB_TOOLS);
     }
 }

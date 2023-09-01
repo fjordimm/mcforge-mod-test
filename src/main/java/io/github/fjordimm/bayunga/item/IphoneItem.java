@@ -15,11 +15,8 @@ public class IphoneItem extends Item
 
     private static Item.Properties makeItemProperties()
     {
-        Item.Properties ret = new Item.Properties();
-
-        ret.stacksTo(3);
-        ret.tab(CreativeModeTab.TAB_TOOLS);
-
-        return ret;
+        return new Item.Properties()
+                .tab(CreativeModeTab.TAB_TOOLS)
+                .stacksTo(3);
     }
 }

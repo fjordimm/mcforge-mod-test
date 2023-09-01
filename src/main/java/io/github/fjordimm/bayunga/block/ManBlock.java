@@ -19,11 +19,8 @@ public class ManBlock extends Block
 
     private static BlockBehaviour.Properties makeBlockProperties()
     {
-        BlockBehaviour.Properties ret = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIRT);
-
-        ret.sound(SoundType.MUD);
-        ret.strength(0.5F);
-
-        return ret;
+        return BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIRT)
+                .sound(SoundType.MUD)
+                .strength(0.5F);
     }
 }

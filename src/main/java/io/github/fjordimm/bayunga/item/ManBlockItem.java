@@ -17,10 +17,7 @@ public class ManBlockItem extends BlockItem
 
     private static Item.Properties makeItemProperties()
     {
-        Item.Properties ret = new Item.Properties();
-
-        ret.tab(CreativeModeTab.TAB_TOOLS);
-
-        return ret;
+        return new Item.Properties()
+                .tab(CreativeModeTab.TAB_TOOLS);
     }
 }

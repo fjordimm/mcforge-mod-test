@@ -3,6 +3,7 @@ package io.github.fjordimm.bayunga.block;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
@@ -15,13 +16,10 @@ public class PaperSlabBlock extends SlabBlock
         super(makeBlockProperties());
     }
 
-    private static Properties makeBlockProperties()
+    private static BlockBehaviour.Properties makeBlockProperties()
     {
-        Properties ret = Properties.of(Material.WOOL, MaterialColor.WOOL);
-
-        ret.sound(SoundType.WOOL);
-        ret.strength(0.1F);
-
-        return ret;
+        return BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.WOOL)
+                .sound(SoundType.WOOL)
+                .strength(0.1F);
     }
 }
