@@ -1,7 +1,9 @@
 package io.github.fjordimm.bayunga.block;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -10,12 +12,13 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class AmogusBlock extends Block
 {
     public static final String REGISTRY_NAME = "amogus";
-
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public AmogusBlock()
     {
@@ -30,6 +33,8 @@ public class AmogusBlock extends Block
                 .sound(SoundType.FUNGUS)
                 .strength(0.1F);
     }
+
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     @Override
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
@@ -48,5 +53,14 @@ public class AmogusBlock extends Block
     {
         return this.defaultBlockState()
                 .setValue(FACING, context.getHorizontalDirection().getClockWise().getClockWise());
+    }
+
+    public static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 7, 11);
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
+    {
+        // return Blocks.ANVIL.getShape(Blocks.ANVIL.defaultBlockState(), world, pos, context);
+        return SHAPE;
     }
 }
