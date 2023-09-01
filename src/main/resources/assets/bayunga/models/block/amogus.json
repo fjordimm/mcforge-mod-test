@@ -1,0 +1,7 @@
+{
+  "parent": "bayunga:block/template_amogus",
+  "textures":
+  {
+    "all": "bayunga:block/amogus"
+  }
+}
