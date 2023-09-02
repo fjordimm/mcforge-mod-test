@@ -1,5 +1,6 @@
 package io.github.fjordimm.bayunga.block;
 
+import io.github.fjordimm.bayunga.util.UtilVoxelShape;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -55,12 +56,28 @@ public class AmogusBlock extends Block
                 .setValue(FACING, context.getHorizontalDirection().getClockWise().getClockWise());
     }
 
-    public static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 7, 11);
+    private static final VoxelShape SHAPE = Shapes.or(
+            Block.box(6, 0, 6, 10, 7, 10),
+            Block.box(7, 4, 10, 9, 5, 11),
+            Block.box(6, 2, 5, 10, 5, 6)
+    );
+
+    private static final VoxelShape SHAPE_SOUTH = SHAPE;
+    private static final VoxelShape SHAPE_EAST = UtilVoxelShape.rotateShapeFromBottom(SHAPE_SOUTH);
+    private static final VoxelShape SHAPE_NORTH = UtilVoxelShape.rotateShapeFromBottom(SHAPE_EAST);
+    private static final VoxelShape SHAPE_WEST = UtilVoxelShape.rotateShapeFromBottom(SHAPE_NORTH);
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
     {
-        // return Blocks.ANVIL.getShape(Blocks.ANVIL.defaultBlockState(), world, pos, context);
-        return SHAPE;
+        // return Blocks.ANVIL.defaultBlockState().getShape(world, pos, context);
+        switch (state.getValue(FACING))
+        {
+            case SOUTH: return SHAPE_SOUTH;
+            case NORTH: return SHAPE_NORTH;
+            case WEST: return SHAPE_WEST;
+            case EAST: return SHAPE_EAST;
+            default: return SHAPE;
+        }
     }
 }
