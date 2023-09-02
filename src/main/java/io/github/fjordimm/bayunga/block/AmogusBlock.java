@@ -57,9 +57,9 @@ public class AmogusBlock extends Block
     }
 
     private static final VoxelShape SHAPE = Shapes.or(
-            Block.box(6, 0, 6, 10, 7, 10),
-            Block.box(7, 4, 10, 9, 5, 11),
-            Block.box(6, 2, 5, 10, 5, 6)
+            Block.box(5, 0, 5, 11, 14, 11),
+            Block.box(6, 10, 11, 10, 12, 12),
+            Block.box(5, 4, 3, 11, 11, 5)
     );
 
     private static final VoxelShape SHAPE_SOUTH = SHAPE;

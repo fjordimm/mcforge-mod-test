@@ -1,54 +1,49 @@
 {
-  "parent": "minecraft:block/block",
-  "textures":
-  {
-    "particle": "#all",
-    "body": "#all"
-  },
-  "texture_size": [32, 32],
-  "elements":
-  [
-    {
-      "__comment": "Main torso",
-      "from": [6, 0, 6],
-      "to": [10, 7, 10],
-      "faces":
-      {
-        "down": {"uv": [2, 8, 4, 10], "texture": "#body", "cullface": "down"},
-        "up": {"uv": [2, 2.5, 4, 4.5], "texture": "#body"},
-        "west": {"uv": [0, 4.5, 2, 8], "texture": "#body"},
-        "south": {"uv": [2, 4.5, 4, 8], "texture": "#body"},
-        "east": {"uv": [4, 4.5, 6, 8], "texture": "#body"},
-        "north": {"uv": [6, 4.5, 8, 8], "texture": "#body"}
-      }
-    },
-    {
-      "__comment": "Eyes",
-      "from": [7, 4, 10],
-      "to": [9, 5, 11],
-      "faces":
-      {
-        "down": {"uv": [0.5, 2, 1.5, 2.5], "texture": "#body"},
-        "up": {"uv": [0.5, 1, 1.5, 1.5], "texture": "#body"},
-        "west": {"uv": [0, 1.5, 0.5, 2], "texture": "#body"},
-        "south": {"uv": [0.5, 1.5, 1.5, 2], "texture": "#body"},
-        "east": {"uv": [1.5, 1.5, 2, 2], "texture": "#body"},
-        "north": {"uv": [2, 1.5, 3, 2], "texture": "#body"}
-      }
-    },
-    {
-      "__comment": "Backpack",
-      "from": [6, 2, 5],
-      "to": [10, 5, 6],
-      "faces":
-      {
-        "down": {"uv": [3.5, 2, 5.5, 2.5], "texture": "#body"},
-        "up": {"uv": [3.5, 0, 5.5, 0.5], "texture": "#body"},
-        "west": {"uv": [3, 0.5, 3.5, 2], "texture": "#body"},
-        "south": {"uv": [3.5, 0.5, 5.5, 2], "texture": "#body"},
-        "east": {"uv": [5.5, 0.5, 6, 2], "texture": "#body"},
-        "north": {"uv": [6, 0.5, 8, 2], "texture": "#body"}
-      }
-    }
-  ]
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "#all",
+		"particle": "#all"
+	},
+	"elements": [
+		{
+			"name": "MainTorso",
+			"from": [5, 0, 5],
+			"to": [11, 14, 11],
+			"faces": {
+				"north": {"uv": [0, 0, 3, 7], "texture": "#0"},
+				"east": {"uv": [3, 0, 6, 7], "texture": "#0"},
+				"south": {"uv": [6, 0, 9, 7], "texture": "#0"},
+				"west": {"uv": [0, 7, 3, 14], "texture": "#0"},
+				"up": {"uv": [12, 3, 9, 0], "texture": "#0"},
+				"down": {"uv": [12, 3, 9, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "EyeHole",
+			"from": [6, 10, 11],
+			"to": [10, 12, 12],
+			"faces": {
+				"north": {"uv": [10, 8, 12, 9], "texture": "#0"},
+				"east": {"uv": [5, 10.5, 5.5, 11.5], "texture": "#0"},
+				"south": {"uv": [10, 9, 12, 10], "texture": "#0"},
+				"west": {"uv": [5.5, 10.5, 6, 11.5], "texture": "#0"},
+				"up": {"uv": [12, 10.5, 10, 10], "texture": "#0"},
+				"down": {"uv": [5, 10.5, 3, 11], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Backpack",
+			"from": [5, 4, 3],
+			"to": [11, 11, 5],
+			"faces": {
+				"north": {"uv": [3, 7, 6, 10.5], "texture": "#0"},
+				"east": {"uv": [9, 6, 10, 9.5], "texture": "#0"},
+				"south": {"uv": [6, 7, 9, 10.5], "texture": "#0"},
+				"west": {"uv": [9, 9.5, 10, 13], "texture": "#0"},
+				"up": {"uv": [13, 7, 10, 6], "texture": "#0"},
+				"down": {"uv": [13, 7, 10, 8], "texture": "#0"}
+			}
+		}
+	]
 }
