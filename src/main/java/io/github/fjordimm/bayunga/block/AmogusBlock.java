@@ -30,7 +30,6 @@ public class AmogusBlock extends Block
     private static BlockBehaviour.Properties makeBlockProperties()
     {
         return BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.COLOR_RED)
-                .noOcclusion()
                 .sound(SoundType.FUNGUS)
                 .strength(0.1F);
     }
